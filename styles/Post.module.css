@@ -1,0 +1,49 @@
+@value vars: "./variables.module.css";
+@value bgColor, textColor, bodyBg, bodyText from vars;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 70%;
+  background-color: bgColor;
+  color: textColor;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #000000;
+  margin: 20px auto;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.title {
+  font-size: 22px;
+  margin: 0;
+  color: textColor;
+}
+.info_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: textColor;
+}
+.author {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: textColor;
+}
+.time {
+  margin: 0;
+  font-size: 18px;
+  font-style: italic;
+  color: textColor;
+}
+.body {
+ background-color:bodyBg;
+ width: 100%;
+ height: fit-content;
+ padding: 5px;
+ border-radius: 10px;
+ color: bodyText;
+}

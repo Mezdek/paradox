@@ -1,0 +1,83 @@
+
+.form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 50px;
+  font-size: 12px;
+  margin: 20px auto;
+}
+.searchOptions {
+  position: relative;
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  /* background-color: bisque; */
+}
+
+.orderOptions {
+  position: absolute;
+  bottom: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 5px 10px;
+  transition-duration: 1s;
+}
+
+.input {
+  display: none;
+}
+.label {
+  position: relative;
+  display: flex;
+  margin: 0 20px;
+  padding: 0 4px;
+}
+.label::before {
+  display: block;
+  position: absolute;
+  left: -30%;
+  top: 20%;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: gray;
+  transition-duration: 500ms;
+}
+.input:checked + .label::before {
+  background-color: black;
+}
+
+.button {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  margin: 0 10px;
+}
+.sortButton {
+  background-image: url('../public/sort.png');
+}
+.searchButton {
+  background-image: url('../public/search.png');
+}
+
+.hidden {
+  bottom: -30px;
+  opacity: 0;
+  transform: rotateX(90deg);
+}
