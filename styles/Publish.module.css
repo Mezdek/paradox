@@ -1,0 +1,69 @@
+@value vars: "./variables.module.css";
+@value bgColor, textColor, bodyBg, bodyText from vars;
+
+.main_container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.808);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #000;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  background-color: bgColor;
+  color: textColor;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.input {
+  appearance: none;
+  width: 80%;
+  height: 30px;
+  margin: 10px 0;
+  padding: 3px;
+  border: solid 1px #000;
+  background-color: bodyBg;
+  color: bodyText;
+}
+.textarea {
+  appearance: none;
+  resize: none;
+  width: 80%;
+  height: 180px;
+  margin: 10px 0;
+  padding: 8px;
+  border: solid 1px #000;
+  background-color: bodyBg;
+  color: bodyText;
+}
+.buttons {
+  display: flex;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
