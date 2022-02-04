@@ -26,7 +26,7 @@ PRIMARY KEY (`id`));
 
 INSERT INTO users(user, password, date)
 VALUES
-('paradox', 'paradox', '2016-01-01 00:00:00'),
-('trump', 'trump', '2019-03-09 14:07:09'),
-('putin', 'putin', '2019-03-11 03:30:59'),
-('merkel', 'merkel', '2019-03-11 03:32:03');
+('paradox', '$argon2id$v=19$m=65536,t=5,p=1$GKv0Vf25XsM7O6oE/SAjNw$HBP0LdDKi7xqN+b2I7iX2l0pYszwRBEQAe04873gqxg', '2016-01-01 00:00:00'),
+('trump', '$argon2id$v=19$m=65536,t=5,p=1$zcCUjeRv9qxTPZEWBLj2Tw$i51UYqO4fZehme+qKwK8ABxYeJwrlmyoVtJSIdF8990', '2019-03-09 14:07:09'),
+('putin', '$argon2id$v=19$m=65536,t=5,p=1$R8CHKUywGyQp5UGUKuMq9Q$prFMFWwrATldY1smadN3sxzDfy0rU+ocZ2Sr4ijhYsE', '2019-03-11 03:30:59'),
+('merkel', '$argon2id$v=19$m=65536,t=5,p=1$ilFVFwMRWhtY1CUK1omzUA$6MaSABElDAkQE6FsThKFrp/fTs+6qD4IfDNQoWkDKxg', '2019-03-11 03:32:03');

@@ -6,15 +6,14 @@ const sqlDateTimeToText = (datetime) =>
 export default function Post({ author, subject, body, date }) {
   return (
     <div className={style.container}>
-      <h2 className={style.title}>{subject}</h2>
+      <h2 className={style.title}>{subject && subject}</h2>
       <div className={style.info_container}>
-        <h5 className={style.author}>{author}</h5>
+        <h5 className={style.author}>{author && author}</h5>
         <p className={style.time}>
-          {" "}
           {date && `published on ${sqlDateTimeToText(date)}`}{" "}
         </p>
       </div>
-      <p className={style.body}>{body}</p>
+      <p className={style.body}>{body || "No Posts Found!"}</p>
     </div>
   );
 }
