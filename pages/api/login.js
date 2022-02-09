@@ -1,15 +1,13 @@
 import Auth from "../../API/modules/auth";
+import User from "../../API/modules/user";
 
 export default function login(req, res) {
   const { username, password } = req.body;
   const auth = new Auth(username, password);
-  // const myHeaders = new Headers();
-  // myHeaders.append("Content-Type", "application/json");
-  // myHeaders.append("Accept", "application/json");
-  // myHeaders.append("withCredentials", "true");
+  const user = new User(username, password);
   switch (req.method) {
     case "POST":
-      auth
+      user
         .findUser()
         .then(([response]) => {
           if (response.length === 0) {
@@ -24,7 +22,7 @@ export default function login(req, res) {
               return auth.generateJWT();
             })
             .then((token) => {
-              res.setHeader("Set-Cookie", `_paradox_token=${token}`);
+              auth.setCookie(res, token);
               res.status(200).json({ message: "LOGIN SUCCESSFUL" });
             });
         })

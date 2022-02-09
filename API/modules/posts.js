@@ -18,6 +18,7 @@ class Posts {
   }
   read() {
     try {
+      // preparing the query according to the search criteria and order
       let sql = `SELECT author, subject, body, date FROM posts`;
       let values = [];
       if (this.author || this.subject) sql += " WHERE";
@@ -54,13 +55,9 @@ class Posts {
       }
       if (orderdByDate ^ (this.desc === "1")) sql += " DESC";
 
-      return db.query(sql, values).then(([rows]) => {
-        if (rows.length > 0) return rows;
-        else return Promise.reject("NO_POSTS");
-      });
+      return db.query(sql, values);
     } catch (error) {
-      console.log("Error: ", error);
-      return Promise.reject("ERROR", error);
+      console.error(error);
     }
   }
 
@@ -74,8 +71,7 @@ class Posts {
         ])
         .then(([rows]) => this.getById(rows.insertId));
     } catch (error) {
-      console.log("Error: ", error);
-      return Promise.reject("ERROR", error);
+      console.error(error);
     }
   }
 }

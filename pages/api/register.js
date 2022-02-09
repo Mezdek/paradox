@@ -1,16 +1,20 @@
-import Auth from "../../API/modules/auth";
+// import Auth from "../../API/modules/auth";
+import User from "../../API/modules/user";
+
 export default function register(req, res) {
   const { username, password } = req.body;
-  const auth = new Auth(username, password);
+  // const auth = new Auth(username, password);
+  const user = new User(username, password);
+
   switch (req.method) {
     case "POST":
-      auth
+      user
         .findUser()
         .then(([response]) => {
           if (response.length > 0) {
             return Promise.reject("USER_EXISTS");
           }
-          return auth.createUser();
+          return user.createUser();
         })
         .then(() =>
           res.status(201).json({ message: "USER CREATED SUCCESSFULLY" })

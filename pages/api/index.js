@@ -10,10 +10,15 @@ export default function handler(req, res) {
     case "GET":
       posts
         .read()
-        .then((data) => res.json(data))
+        .then(([data]) => {
+          if (data.length == 0) {
+            return Promise.reject("NO_POSTS");
+          } else res.json(data);
+        })
         .catch((err) => {
+          console.error(err);
           if (err === "NO_POSTS") res.status(204).end();
-          res.status(404);
+          else res.sendStatus(404);
         });
       break;
     case "POST":
