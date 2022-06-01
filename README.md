@@ -1,4 +1,5 @@
-This project's main aim is to build a simple website yet to cover everything. This was the last checkpoint in Wild Code School.
+# Paradox
+#### This project's main aim is to build a simple website yet to cover everything. This was the last checkpoint in Wild Code School.
 
 * [What it does](#what-it-does)
 * [How to start](#how-to-start)
